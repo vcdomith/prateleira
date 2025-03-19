@@ -15,11 +15,10 @@ export default function ListaProdutos({produtos}: {produtos: Produto[]}) {
     const [search, setSearch] = useState('')
     const [debouncedSearch, setDebouncedSearch] = useState(search);
 
-    // Debounce logic
     useEffect(() => {
         const timer = setTimeout(() => {
             setDebouncedSearch(search);
-        }, 100); // Adjust the delay as needed
+        }, 100);
 
         return () => clearTimeout(timer);
     }, [search]);
@@ -34,7 +33,7 @@ export default function ListaProdutos({produtos}: {produtos: Produto[]}) {
             type="text" 
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="border border-2px border-solid border-white"
+            className="border border-2px border-solid dark:border-white border-gray-900"
         />
         <ul>
           {produtosDisplay?.map( ({codigo, local}, index) => 
