@@ -34,7 +34,7 @@ export default function ListaProdutos({produtos}: {produtos: Produto[]}) {
         >
             <label 
                 htmlFor="search"
-                className="m-0 text-white/70"
+                className="m-0 dark:text-white/70 text-black/70"
             >Buscar nas prateleiras:</label>
             <input 
                 type="text" 
@@ -49,7 +49,7 @@ export default function ListaProdutos({produtos}: {produtos: Produto[]}) {
             className="w-full"
         >
             <header
-                className="flex gap-4 w-full justify-between mb-2 pb-0.5 border-b-1 border-white/50"
+                className="flex gap-4 w-full justify-between mb-2 pb-0.5 border-b-1 dark:border-white/50 border-black/50"
             >
                 <h2>Produto:</h2>
                 <h5>Local:</h5>
