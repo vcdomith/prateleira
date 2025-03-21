@@ -53,7 +53,7 @@ export default function ListaProdutos({produtos}: {produtos: Produto[]}) {
                 value={search}
                 onKeyDown={ e => handleKeyDown(e) }
                 onChange={(e) => setSearch(e.target.value)}
-                className="border-2 border-solid dark:border-white/50 border-black/40 pl-2 rounded-sm"
+                className="border border-solid dark:border-white/50 border-black/40 pl-2 rounded-sm"
             />
         </div>
         <motion.ul
@@ -93,7 +93,7 @@ export default function ListaProdutos({produtos}: {produtos: Produto[]}) {
                 (produtosDisplay.length > 10)&&
                 <button
                     onClick={() => setLength(prev => prev + 10)}
-                    className="h-full bg-none border-2 border-black/40 dark:border-white/50 rounded-sm px-8 w-full mt-4"
+                    className="h-full bg-none border border-black/40 dark:border-white/50 rounded-sm px-8 w-full mt-4"
                 >
                     Carregar Mais
                 </button>
