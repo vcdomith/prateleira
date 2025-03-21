@@ -46,15 +46,22 @@ export default function ListaProdutos({produtos}: {produtos: Produto[]}) {
                 htmlFor="search"
                 className="m-0 dark:text-white/70 text-black/70"
             >Buscar nas prateleiras:</label>
-            <input 
-                type="text" 
-                name="search"
-                placeholder="Buscar por código"
-                value={search}
-                onKeyDown={ e => handleKeyDown(e) }
-                onChange={(e) => setSearch(e.target.value)}
-                className="border border-solid dark:border-white/50 border-black/40 pl-2 rounded-sm"
-            />
+            <span
+                className="flex relative"
+            >
+                <input 
+                    type="text" 
+                    name="search"
+                    placeholder="Buscar por código"
+                    value={search}
+                    onKeyDown={ e => handleKeyDown(e) }
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="border border-solid dark:border-white/50 border-black/40 pl-2 py-0.5 rounded-sm focus:outline-none"
+                />
+                {(search !== '')&&
+                <ClearButton setSearch={setSearch} />
+                }
+            </span>
         </div>
         <motion.ul
             className="w-full"
@@ -93,13 +100,31 @@ export default function ListaProdutos({produtos}: {produtos: Produto[]}) {
                 (produtosDisplay.length > 10)&&
                 <button
                     onClick={() => setLength(prev => prev + 10)}
-                    className="h-full bg-none border border-black/40 dark:border-white/50 rounded-sm px-8 w-full mt-4"
+                    className="h-full bg-none border border-black/40 dark:border-white/50 rounded-sm px-8 w-full mt-4 cursor-pointer dark:hover:bg-white/5 transition-colors"
                 >
                     Carregar Mais
                 </button>
             }
         </motion.ul>
         </>
+    )
+
+}
+
+const ClearButton = ({setSearch}: {setSearch: (search: string) => void}) => {
+
+    return (
+        <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg"
+            className="absolute w-8 h-8 right-0"
+            onClick={() => setSearch('')} 
+        >
+            <path d="M156 345L346 155" stroke="black" strokeWidth="20"
+                className="stroke-black/80 dark:stroke-white"
+            />
+            <path d="M155 155L345 345" stroke="black" strokeWidth="20"
+                className="stroke-black/80 dark:stroke-white"
+            />
+        </svg>
     )
 
 }
