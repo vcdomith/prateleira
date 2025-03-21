@@ -11,6 +11,8 @@
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.1",
+    "babel-plugin-react-compiler": "^19.0.0-beta-3229e95-20250315",
+    "motion": "^12.5.0",
     "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
